@@ -4,3 +4,6 @@ GET {{GlobalExceptionMiddleware_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+GET {{GlobalExceptionMiddleware_HostAddress}}/api/test/
+Accept:application/json
+

@@ -21,12 +21,17 @@ namespace GlobalExceptionMiddleware
                 app.MapOpenApi();
             }
 
-            app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseGlobalExceptionHandlerMiddleware();
 
 
-            app.MapControllers();
+            app.UseRouting();
+            app.UseAuthorization();  
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();  // Make sure this is included
+            });
+
 
             app.Run();
         }
